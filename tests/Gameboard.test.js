@@ -10,14 +10,14 @@ test('Can place ships on the board', () => {
 //Confirm that missed shots are recorded properly
 test('Records missed shots', () => {
     const board = new Gameboard();//Verify the missed shot 5 5
-    board.receiveAttack([5, 5]);
+    board.recieveAttack([5, 5]);
     expect(board.missedShots).toContainEqual([5, 5]);
 });
 //Verifies that the gameboard can detect when all the ships have been sunk
 test('Detects when all ships are sunk', () => {
     const board = new Gameboard();//Ships placed and recieve attacks
     board.placeShip([0, 0], 'horizontal', 2);
-    board.receiveAttack([0, 0]);
-    board.receiveAttack([0, 1]);
+    board.recieveAttack([0, 0]);
+    board.recieveAttack([0, 1]);
     expect(board.allShipSunk()).toBe(true);//Ensures the method correctly identifies that all ships are sunk
 });
