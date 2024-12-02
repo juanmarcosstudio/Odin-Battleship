@@ -8,7 +8,7 @@ class Gameboard { //representing 10x10 empty gameboard
     }
     //Places a ship on the gameboard
     placeShip(start, direction, length) {
-        const newShip = new Ship(length);
+        const newShip = new ship(length);
         const shipPositions = [];
 
         for (let i = 0; i < length; i++) {
@@ -25,13 +25,13 @@ class Gameboard { //representing 10x10 empty gameboard
         this.ships.push({ ship: newShip, positions: shipPositions });
     }
     //Handles attck for the gameboard
-    receiveAttack(coords) {
+    recieveAttack(coords) {
         const [x, y] = coords;//Coordinates
 
         if (this.board[x][y] === null) { //For missedshots
             this.missedShots.push(coords);
-        } else if (this.board[x][y] instanceof Ship) {
-            this.board[x][y],hit();
+        } else if (this.board[x][y] instanceof ship) {
+            this.board[x][y].hit();
         }
     }
     //Checks if all the ships on the board are sunk
