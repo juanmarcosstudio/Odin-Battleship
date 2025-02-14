@@ -15,7 +15,7 @@ class Player {
         this.previousMoves.add(coords.toString());
         enemyGameboard.recieveAttack(coords);//Call the enamy gameboard to process the attack
     }
-    //Generates a random valid move for the player
+    
     generateRandomMove() {
         let x, y;
         do {
